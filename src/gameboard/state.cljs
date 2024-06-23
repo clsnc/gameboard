@@ -19,4 +19,4 @@
                              attr val}]))
 
 (defn set-team-name! [team-id new-name]
-  (set-attribute! team-id ::name new-name))7
+  (set-attribute! team-id ::name new-name))
