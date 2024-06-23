@@ -12,10 +12,13 @@
       :value (team ::state/name)}]))
 
 (defn team-score [db team-id]
-  (let [score ((d/entity db team-id) ::state/score)]
+  (let [score ((d/entity db team-id) ::state/score-text)]
     [:div.team-score
      [:div.team-score-label "score"]
-     [:div.team-score-value score]]))
+     [:input.team-score-value
+      {:type :number
+       :onChange #(state/set-team-score-text! team-id (u/input-event->value %))
+       :value score}]]))
 
 (defn team-panel [db team-id]
   [:div.team-panel
