@@ -27,4 +27,4 @@
                                    :where [?id ::state/type ::state/team]]
                                  db))]
     [:div.team-panels
-     (map #(team-panel db %) team-ids)]))
+     (map #(with-meta (team-panel db %) {:key %}) team-ids)]))
