@@ -1,14 +1,11 @@
 (ns gameboard.core
   (:require
-   [reagent.core :as r]
    [reagent.dom :as d]
    [gameboard.state :as state]
    [gameboard.ui :as ui]))
 
-(def db-atom (r/atom state/default-db))
-
 (defn home-page []
-  (let [db @db-atom]
+  (let [db @state/db-atom]
     [:div (ui/team-panels db)]))
 
 (defn mount-root []

@@ -37,9 +37,8 @@ html, body, #app {
 .team-name {
     flex-grow: 1;
     font-size: 2em;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    text-align: center;
+    border: 0;
 }
 
 .team-score {
